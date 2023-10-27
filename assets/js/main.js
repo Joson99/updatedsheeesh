@@ -80,71 +80,67 @@ scrollToTopButton.addEventListener('click', () => {
 
 /* ------ Script for Popup Forms (Client Login, Admin Login, and Registration form) ------ */
 
+// Function to open a popup with a sliding effect from the top
+function openPopup(popup) {
+    popup.style.display = 'block';
+    hideHamburgerMenu();
+    disableScroll();
+    setTimeout(() => {
+        popup.classList.add('active');
+    }, 10);
+}
+
+// Function to close a popup with a sliding effect to the top
+function closePopup(popup) {
+    popup.classList.remove('active');
+    enableScroll();
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 600);
+}
+
 // Book Appointment Button -> Open Client Login Form
 bookAppointmentButton.addEventListener('click', () => {
-    clientPopup.style.display = 'block';
-    hideHamburgerMenu();
-    disableScroll(); // Disable scrolling
+    openPopup(clientPopup);
 });
 
 // "Login as Admin" link -> Open Admin Login Form
 adminLoginLink.addEventListener('click', () => {
-    // Close the client login popup
-    clientPopup.style.display = 'none';
-    // Open the admin login popup
-    adminPopup.style.display = 'block';
-    hideHamburgerMenu();
-    disableScroll(); // Disable scrolling
+    closePopup(clientPopup);
+    openPopup(adminPopup);
 });
 
 // "Login as a Client" link -> Get back to Client Login Form
 loginAsClientLink.addEventListener('click', () => {
-    // Close the admin login popup
-    adminPopup.style.display = 'none';
-    // Open the client login popup
-    clientPopup.style.display = 'block';
-    hideHamburgerMenu();
-    disableScroll(); // Disable scrolling
+    closePopup(adminPopup);
+    openPopup(clientPopup);
 });
 
 // "Register" link -> Open Registration Form
 registerLink.addEventListener('click', () => {
-    // Close the client login popup
-    clientPopup.style.display = 'none';
-    // Open the registration form popup
-    registerPopup.style.display = 'block';
-    hideHamburgerMenu();
-    disableScroll(); // Disable scrolling
+    closePopup(clientPopup);
+    openPopup(registerPopup);
 });
 
 // "Login" link -> Get back to Client Login Form
 loginLink.addEventListener('click', () => {
-    // Close the Registration Form Popup
-    registerPopup.style.display = 'none';
-    // Open the Client Login Popup
-    clientPopup.style.display = 'block';
-    hideHamburgerMenu();
-    disableScroll(); // Disable scrolling
+    closePopup(registerPopup);
+    openPopup(clientPopup);
 });
 
 // Close Button -> Close Client Login Form
 closeClientPopup.addEventListener('click', () => {
-    clientPopup.style.display = 'none';
-    enableScroll(); // Enable scrolling
+    closePopup(clientPopup);
 });
 
 // Close Button -> Close Admin Login Form
 closeAdminPopup.addEventListener('click', () => {
-    // Close the admin login popup
-    adminPopup.style.display = 'none';
-    enableScroll(); // Enable scrolling
+    closePopup(adminPopup);
 });
 
 // Close Button -> Close Registration Form
 closeRegisterPopup.addEventListener('click', () => {
-    // Close the registration form popup
-    registerPopup.style.display = 'none';
-    enableScroll(); // Enable scrolling
+    closePopup(registerPopup);
 });
 
 /* --------------------------------------------------------------------------------------- */
