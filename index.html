@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Joson-Perey Dental Clinic</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <p>Opening Hours: Mon-Fri: 8 AM - 6 PM | Sat: 9 AM - 3 PM</p>
+        </div>
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo Image">
+                <div class="logo-text">Joson-Perey</div>
+            </div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="book-appointment" href="#">Book Appointment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Client Login Popup Form -->
+    <div id="client-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <h2>Client Login</h2>
+            <div class="popup-logofull">
+                <img src="assets/images/full-logo.png" alt="Full Logo Icon">
+            </div>
+            <form id="login-form">
+                <div class="input-container">
+                    <img src="assets/images/user-icon.png" alt="Username Icon">
+                    <input type="text" placeholder="Username" id="username" name="username" required>
+                </div>
+
+                <div class="input-container">
+                    <img src="assets/images/password-icon.png" alt="Password Icon">
+                    <input style="margin-bottom: 10px;" type="password" placeholder="Password" id="password" name="password" required>
+                </div>
+                
+                <div class="link-container">
+                    <p style="font-size: 12px;"><a href="#">Forgot Password?</a></p>
+                    <p style="margin-left: 50px; font-size: 12px;"><a id="admin-login-link" href="#">Login as Admin</a></p>
+                </div>
+
+                <button type="button" id="login-button" class="login-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+        </div>
+    </div>
+
+    <!-- Admin Login Popup Form -->
+    <div id="admin-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-admin-popup">&times;</span>
+            <h2>Admin Login</h2>
+            <div class="popup-logofull">
+                <img src="assets/images/full-logo.png" alt="Full Logo Icon">
+            </div>
+            <form id="admin-login-form">
+                <div class="input-container">
+                    <img src="assets/images/user-icon.png" alt="Admin Icon">
+                    <input type="text" placeholder="Admin Username" id="admin-username" name="admin-username" required>
+                </div>
+
+                <div class="input-container">
+                    <img src="assets/images/password-icon.png" alt="Password Icon">
+                    <input style="margin-bottom: 10px;" type="password" placeholder="Admin Password" id="admin-password" name="admin-password" required>
+                </div>
+
+                <button type="button" id="admin-login-button" class="login-button">Login as Admin</button>
+            </form>
+            <p>Not an admin? <a href="#" id="login-as-client-link">Login as a Client</a></p>
+        </div>
+    </div>
+
+    <!-- Registration Form Popup -->
+    <div id="register-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="close-register-popup">&times;</span>
+            <div class="registration-h2">
+                <h2>Registration Form</h2>
+            </div>
+            <div class="popup-logofull">
+                <img style="margin-bottom: 10px;" src="assets/images/full-logo.png" alt="Full Logo Icon">
+            </div>
+            <fieldset>
+                <div class="scrollable-form">
+                    <div class="scrollable-content">
+                        <form id="register-form">
+                                <!-- Account Information Section -->    
+                                <div class="text-registration-form popup-registernumber">
+                                    <img src="assets/images/1.png" alt="Full Logo Icon">
+                                    <p>Account Information</p>
+                                </div>
+                                <div class="input-container">
+                                    <input type="text" placeholder="Username" id="username" name="username" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="password" placeholder="Password" id="password" name="password" required>
+                                </div>
+                                <div class="input-container">
+                                    <input type="password" placeholder="Confirm Password" id="confirm_password" name="confirm_password" required>
+                                </div>
+
+                                <!-- Personal Information Section -->
+                                    <div class="text-registration-form popup-registernumber">
+                                        <img src="assets/images/2.png" alt="Full Logo Icon">
+                                        <p>Personal Information</p>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="Last Name" id="last-name" name="last-name" required>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="First Name" id="first-name" name="first-name" required>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="Middle Name" id="middle-name" name="middle-name" required>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="Date of Birth" id="date-of-birth" name="date-of-birth" readonly required>
+                                    </div>
+                                    <div class="input-container">
+                                        <select class="box" id="select-sex" name="select-sex" required>
+                                            <option value="" disabled selected>Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <select class="box" id="select-civil-status" name="select-civil-status" required>
+                                            <option value="" disabled selected>Civil Status</option>
+                                            <option value="single">Single</option>
+                                            <option value="married">Married</option>
+                                            <option value="divorced">Divorced</option>
+                                            <option value="widowed">Widowed</option>
+                                        </select>
+                                    </div>
+                                    
+                                <!-- Contact Information Section -->
+                                    <div class="text-registration-form popup-registernumber">
+                                        <img src="assets/images/3.png" alt="Full Logo Icon">
+                                        <p>Contact Information</p>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="email" placeholder="Email" id="email" name="email" required>
+                                    </div>
+                                    <div class="input-container">
+                                        <input type="tel" placeholder="Phone Number" id="phone_number" name="phone_number" required>
+                                    </div>
+
+                                <!-- Address Details Section -->
+                                    <div class="text-registration-form popup-registernumber">
+                                        <img src="assets/images/4.png" alt="Full Logo Icon">
+                                        <p>Address Details</p>
+                                    </div>
+                                    <div class="input-container">
+                                        <select class="box" id="province" name="province" required>
+                                            <option value="" disabled selected>Province</option>
+                                            <option value="Cavite">Cavite</option>
+                                            <option value="Outside Cavite">Outside Cavite</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <select class="box" id="city" name="city" disabled required>
+                                            <option value="" disabled selected>City/Municipality</option>
+                                            <option value="Alfonso">Alfonso</option>
+                                            <option value="Amadeo">Amadeo</option>
+                                            <option value="Bacoor">Bacoor</option>
+                                            <option value="Carmona">Carmona</option>
+                                            <option value="Cavite City">Cavite City</option>
+                                            <option value="Dasmarinas">Dasmarinas</option>
+                                            <option value="Gen. Mariano Alvarez">Gen. Mariano Alvarez</option>
+                                            <option value="General Emilio Aguinaldo">General Emilio Aguinaldo</option>
+                                            <option value="General Trias">General Trias</option>
+                                            <option value="Imus">Imus</option>
+                                            <option value="Indang">Indang</option>
+                                            <option value="Kawit">Kawit</option>
+                                            <option value="Magallanes">Magallanes</option>
+                                            <option value="Maragondon">Maragondon</option>
+                                            <option value="Mendez-Nunez">Mendez-Nunez</option>
+                                            <option value="Naic">Naic</option>
+                                            <option value="Noveleta">Noveleta</option>
+                                            <option value="Rosario">Rosario</option>
+                                            <option value="Silang">Silang</option>
+                                            <option value="Tagaytay">Tagaytay</option>
+                                            <option value="Tanza">Tanza</option>
+                                            <option value="Ternate">Ternate</option>
+                                            <option value="Trece Martires">Trece Martires</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-container">
+                                        <select style="margin-bottom: 25px;" class="box" id="barangay" name="barangay" disabled required>
+                                            <option value="" disabled selected>Barangay</option>
+                                        </select>
+                                    </div>        
+                        </form>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="button" id="register-button" class="login-button">Register</button>
+            <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+        </div>
+    </div>
+
+
+    <section class="content">
+        <h2>Home</h2>
+        <p>Welcome to Your Dental Clinic. We are dedicated to providing top-quality dental care for your family.</p>
+    </section>
+
+    <section class="content">
+        <h2>Services</h2>
+        <p>Our clinic offers a wide range of dental services, from routine check-ups to advanced treatments.</p>
+    </section>
+
+    <section class="content">
+        <h2>Doctors</h2>
+        <p>Meet our team of experienced and caring professionals who are here to take care of your dental needs.</p>
+    </section>
+
+    <section class="content">
+        <h2>About Us</h2>
+        <p>Your Dental Clinic is committed to providing the best dental services. We have a team of experienced and caring professionals to take care of your dental needs.</p>
+    </section>
+
+    <section class="content">
+        <h2>Contact</h2>
+        <p>Get in touch with us for appointments, questions, or any other inquiries. We're here to help!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Joson-Perey</p>
+    </footer>
+
+    <!-- Scroll-to-top button -->
+    <div class="scroll-to-top" id="scrollToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/address-dropdown.js"></script>
+</body>
+</html>
