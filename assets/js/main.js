@@ -54,11 +54,6 @@ function hideHamburgerMenu() {
 // Function to toggle hamburger menu
 function toggleHamburgerMenu() {
     navLinks.classList.toggle('active');
-    if (navLinks.classList.contains('active')) {
-        disableScroll(); // Disable scrolling
-    } else {
-        enableScroll(); // Enable scrolling
-    }
 }
 
 // Open or close navLinks when hamburger is clicked
