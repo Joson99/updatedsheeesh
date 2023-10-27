@@ -88,6 +88,9 @@ function openPopup(popup) {
     setTimeout(() => {
         popup.classList.add('active');
     }, 10);
+    setTimeout(() => {
+        popup.classList.add('bgcolor');
+    }, 600);
 }
 
 // Function to close a popup with a sliding effect to the top
@@ -97,6 +100,7 @@ function closePopup(popup) {
     setTimeout(() => {
         popup.style.display = 'none';
     }, 600);
+    popup.classList.remove('bgcolor');
 }
 
 // Book Appointment Button -> Open Client Login Form
