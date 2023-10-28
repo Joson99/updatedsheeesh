@@ -148,3 +148,44 @@ closeRegisterPopup.addEventListener('click', () => {
 });
 
 /* --------------------------------------------------------------------------------------- */
+
+let slider = document.querySelector('.slider .list');
+let items = document.querySelectorAll('.slider .list .item');
+let dots = document.querySelectorAll('.slider .dots li');
+let active = 0;
+let interval = null;
+
+function reloadSlider() {
+  // Hide all items
+  items.forEach(item => item.style.display = 'none');
+
+  // Show the active item
+  items[active].style.display = 'block';
+
+  // Update active dot
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[active].classList.add('active');
+
+  // Clear the previous interval and start a new one
+  clearInterval(interval);
+  interval = setInterval(nextSlide, 3000);
+}
+
+function nextSlide() {
+  active = (active + 1) % items.length;
+  reloadSlider();
+}
+
+function prevSlide() {
+  active = (active - 1 + items.length) % items.length;
+  reloadSlider();
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    active = index;
+    reloadSlider();
+  });
+});
+
+reloadSlider(); // Show the initial slide
