@@ -18,13 +18,13 @@ body {
 /* Header */
 
 header {
-    position: sticky;
-    top: 0;
-    background-color: #00a4e4;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 164, 228, 0.7);
     color: #fff;
     padding: 20px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+    z-index: 3;
 }
 
 .top-header {
@@ -173,9 +173,9 @@ header {
 /* Content Section */
 
 .content {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
+    max-width: 100vw;
+    margin-top: 0;
+    margin: 0;
 }
 
 
@@ -188,7 +188,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 5;
     transform: translateY(-100%);
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
     opacity: 0;
@@ -620,3 +620,222 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ HOME SLIDER AND HEADING ------------------------ */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slider {
+    max-width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Set z-index to a value lower than the header */
+}
+
+.slider .list {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+    z-index: 1;
+}
+
+.slider .list .item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: 1s;
+}
+
+.slider .list img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.slider .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.slider .dots li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active {
+    width: 30px;
+}
+
+.heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.heading h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.heading p {
+    font-size: 18px;
+}
+
+.heading .login-heading,
+.heading .signup-heading {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.heading .login-heading {
+    text-decoration: none;
+    position: relative;
+    background-color: #fff;
+    color: #003a70;
+    font-weight: bold;
+    padding: 10px 50px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.heading .signup-heading {
+    margin-left: 10px;
+    text-decoration: none;
+    position: relative;
+    background-color: #003a70;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 50px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.heading .login-heading:hover {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+.heading .signup-heading:hover {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+.home-button {
+    margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .slider {
+        height: 600px;
+    }
+
+    .heading h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .heading p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .heading h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .heading p {
+        font-size: 14px;
+    }
+}
+
+/* Further adjustments for screens with max-width: 357px */
+@media screen and (max-width: 357px) {
+    .slider .buttons {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .slider .buttons button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .heading h1 {
+        font-size: 24px;
+    }
+
+    .heading p {
+        font-size: 12px;
+    }
+
+    .heading .login-heading,
+    .heading .signup-heading {
+        padding: 8px 16px;
+    }
+}
+
+/* Adjust slider image size for smaller screens */
+@media screen and (max-width: 768px) {
+    .slider .list .item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Further adjustments for screens with max-width: 357px */
+@media screen and (max-width: 357px) {
+    .slider .list .item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+/* ------------------------------------------------------------- */
