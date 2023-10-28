@@ -116,6 +116,7 @@ header {
 }
 
 .nav-links .book-appointment {
+    position: relative;
     background-color: #fff;
     color: #00a4e4;
     font-weight: bold;
@@ -123,6 +124,7 @@ header {
     border-radius: 5px;
     text-align: center;
     margin-right: 20px;
+    margin-left: 20px;
     transition: background 0.8s ease-in-out, color 0.8s ease-in-out;
 }
 
@@ -491,7 +493,7 @@ footer {
 
 /* Media Query for Responsive Header*/
 
-@media screen and (max-width: 977px) {
+@media screen and (max-width: 1000px) {
     .nav-links {
         display: none;
     }
